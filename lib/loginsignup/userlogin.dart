@@ -88,8 +88,6 @@
 import 'package:docapp/loginsignup/textbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-
 import '../userscreen.dart';
 import 'constants.dart';
 

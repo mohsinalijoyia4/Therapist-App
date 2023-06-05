@@ -1,10 +1,7 @@
-import 'package:docapp/loginsignup/userlogin.dart';
 import 'package:docapp/threpentry.dart';
 import 'package:flutter/material.dart';
 import 'userentrypage.dart';
 import 'loginsignup/constants.dart';
-import 'loginsignup/textbutton.dart';
-import 'loginsignup/therapistregis.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});

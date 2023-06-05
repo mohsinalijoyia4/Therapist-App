@@ -1,8 +1,6 @@
 import 'package:docapp/loginsignup/textbutton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../therapisthome.dart';
 import '../therapistscreen.dart';
 import 'constants.dart';
 

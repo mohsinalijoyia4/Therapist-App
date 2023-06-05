@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'loginsignup/constants.dart';
 import 'loginsignup/textbutton.dart';
-import 'loginsignup/therapistregis.dart';
 
 class UserEntryPage extends StatelessWidget {
   const UserEntryPage({super.key});

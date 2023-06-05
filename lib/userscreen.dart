@@ -34,7 +34,6 @@ class _UserScreenOneState extends State<UserScreenOne>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Stack(
