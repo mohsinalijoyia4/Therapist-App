@@ -111,7 +111,7 @@ class _UserSignInState extends State<UserSignIn> {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios_sharp)),
+            icon: const Icon(Icons.arrow_back_ios_sharp)),
       ),
       body: SafeArea(
         //to make page scrollable
@@ -130,21 +130,21 @@ class _UserSignInState extends State<UserSignIn> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             "Welcome back.",
                             style: kHeadline,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
-                          Text(
+                          const Text(
                             "You've been missed!",
                             style: kBodyText2,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 60,
                           ),
-                          MyTextField(
+                          const MyTextField(
                             hintText: 'Phone, email or username',
                             inputType: TextInputType.text,
                           ),
@@ -162,7 +162,7 @@ class _UserSignInState extends State<UserSignIn> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "Dont't have an account? ",
                           style: kBodyText,
                         ),
@@ -184,7 +184,7 @@ class _UserSignInState extends State<UserSignIn> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     MyTextButton(
@@ -193,14 +193,14 @@ class _UserSignInState extends State<UserSignIn> {
                         Navigator.push(
                           context,
                           CupertinoPageRoute(
-                            builder: (context) => UserScreenOne(),
+                            builder: (context) => const UserScreenOne(),
                           ),
                         );
                       },
                       bgColor: Colors.white,
                       textColor: Colors.black87,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'loginsignup/constants.dart';
 import 'loginsignup/textbutton.dart';
+import 'loginsignup/therapistlogin.dart';
 import 'loginsignup/therapistregis.dart';
 
 class TherapistEntryPageEntryPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class TherapistEntryPageEntryPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: kBackgroundColor,
+      backgroundColor: Colors.white24,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -22,17 +23,21 @@ class TherapistEntryPageEntryPage extends StatelessWidget {
               Flexible(
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: size.height * 0.05,
+                    ),
                     Center(
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        child: const Image(
-                          image:
-                              AssetImage('assets/images/team_illustration.png'),
-                        ),
+                      child: Container(
+                        height: size.height * 0.3,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                          image: AssetImage('assets/images/meditation_bg.png'),
+                        )),
+                        width: size.width * 0.8,
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: size.height * 0.01,
                     ),
                     const Text(
                       "Therapsit Patient \ncollaboration",
@@ -152,14 +157,14 @@ class _AnimatedButtonContainerState extends State<AnimatedButtonContainer> {
                     Navigator.push(
                       context,
                       CupertinoPageRoute(
-                        builder: (context) => UserSignIn(),
+                        builder: (context) => TherapistLoginPage(),
                       ),
                     );
                     setState(() {
                       position = 0.0;
                     });
                   },
-                  textColor: signUpTextColor,
+                  textColor: Colors.white,
                 ),
               ),
             ],

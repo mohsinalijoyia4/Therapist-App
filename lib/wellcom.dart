@@ -67,21 +67,21 @@ class WelcomePage extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    TherapistEntryPageEntryPage()),
+                                    const TherapistEntryPageEntryPage()),
                           );
                         },
-                        child: Text(
-                          "Therapist",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500),
-                        ),
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
                           backgroundColor: Colors.white,
+                        ),
+                        child: const Text(
+                          "Therapist",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500),
                         ),
                       ),
                     ),
@@ -100,10 +100,10 @@ class WelcomePage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => UserEntryPage()),
+                                builder: (context) => const UserEntryPage()),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           "User",
                           style: TextStyle(
                               color: Colors.black,

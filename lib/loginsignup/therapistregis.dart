@@ -11,13 +11,15 @@ class TherapistRegistrationPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Therapist Registration'),
-      // ),
+      backgroundColor: Colors.white24,
+      appBar: AppBar(
+        backgroundColor: Colors.white24,
+        title: const Text('Therapist Registration'),
+      ),
       body: SingleChildScrollView(
         child: Container(
           height: size.height,
-          decoration: const BoxDecoration(color: kBackgroundColor),
+          decoration: const BoxDecoration(color: Colors.white24),
           child: Padding(
             padding: const EdgeInsets.all(18.0),
             child: Column(
@@ -38,7 +40,7 @@ class TherapistRegistrationPage extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: const BorderSide(color: Colors.white),
                     ),
                   ),
                 ),
@@ -168,7 +170,7 @@ class TherapistRegistrationPage extends StatelessWidget {
                 ),
               ],
             ),
-          ), 
+          ),
         ),
       ),
     );

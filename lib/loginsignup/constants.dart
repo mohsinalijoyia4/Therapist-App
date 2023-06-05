@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 // Colors
 const kBackgroundColor = Color(0xff191720);
@@ -129,6 +132,89 @@ class MyPasswordField extends StatelessWidget {
     );
   }
 }
+
+class DrawerWidget extends StatefulWidget {
+  @override
+  _DrawerWidgetState createState() => _DrawerWidgetState();
+}
+
+class _DrawerWidgetState extends State<DrawerWidget> {
+  late ImagePicker _imagePicker;
+  late PickedFile _pickedFile;
+  String? _profilePicturePath;
+
+  @override
+  void initState() {
+    super.initState();
+    _imagePicker = ImagePicker();
+    _profilePicturePath =
+        'assets/images/profile_picture.png'; // Default profile picture path
+  }
+
+  Future<void> _selectProfilePicture() async {
+    final pickedFile =
+        await _imagePicker.pickImage(source: ImageSource.gallery);
+    if (pickedFile != null) {
+      setState(() {
+        _pickedFile = pickedFile as PickedFile;
+        _profilePicturePath = _pickedFile.path;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: kBackgroundColor,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                GestureDetector(
+                  onTap: _selectProfilePicture,
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundImage: _profilePicturePath != null
+                        ? FileImage(File(_profilePicturePath!))
+                            as ImageProvider<Object>
+                        : AssetImage('assets/images/profile_picture.png'),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Username',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ListTile(
+            title: Text('Notification'),
+            onTap: () {
+              // Handle notification tap
+            },
+          ),
+          ListTile(
+            title: Text('Edit Profile'),
+            onTap: () {
+              // Handle edit profile tap
+            },
+          ),
+          // Add more items as needed
+        ],
+      ),
+    );
+  }
+}
+
 
 // class BottomNavBar extends StatefulWidget {
 //   const BottomNavBar({

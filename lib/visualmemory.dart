@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class VisualMemory extends StatefulWidget {
+  const VisualMemory({super.key});
+
   @override
   _VisualMemoryState createState() => _VisualMemoryState();
 }

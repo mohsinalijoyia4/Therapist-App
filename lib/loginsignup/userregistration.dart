@@ -12,9 +12,9 @@ class UserRegistration extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('User Registration'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('User Registration'),
+      // ),
       body: SingleChildScrollView(
         child: Container(
           height: size.height,
@@ -25,7 +25,7 @@ class UserRegistration extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
-                  height: size.height * 0.1,
+                  height: size.height * 0.15,
                 ),
                 TextFormField(
                   decoration: InputDecoration(

@@ -1,14 +1,15 @@
-import 'package:docapp/game.dart';
 import 'package:docapp/visualmemory.dart';
 import 'package:docapp/wordformation.dart';
 import 'package:flutter/material.dart';
-
+import 'game.dart';
 import 'loginsignup/constants.dart';
 
 class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       // bottomNavigationBar: BottomNavBar(),
       body: Stack(
@@ -61,10 +62,10 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    // SizedBox(
-                    //   width: size.width * .5, // it just take the 50% width
-                    //   child: SearchBar(),
-                    // ),
+                    SizedBox(
+                      width: size.width * .5, // it just take the 50% width
+                      child: SearchBar(),
+                    ),
                     const SizedBox(height: 20),
                     Wrap(
                       spacing: 20,
@@ -73,35 +74,43 @@ class DetailsScreen extends StatelessWidget {
                         SeassionCard(
                           text: "Visual Memory ",
                           seassionNum: 1,
-                          isDone: true,
-                          press: () {},
+                          // isDone: true,
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => VisualMemory()),
+                            );
+                          },
                         ),
                         SeassionCard(
-                          text: "Visual Memory ",
+                          text: "Word Formation ",
                           seassionNum: 2,
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WordFormation()),
+                            );
+                          },
                         ),
                         SeassionCard(
-                          text: "Visual Memory ",
+                          text: "Matching Game ",
                           seassionNum: 3,
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MatchingGame()),
+                            );
+                          },
                         ),
                         SeassionCard(
                           text: "Visual Memory ",
                           seassionNum: 4,
                           press: () {},
                         ),
-                        SeassionCard(
-                          text: "Visual Memory ",
-                          seassionNum: 5,
-                          press: () {},
-                        ),
-                        SeassionCard(
-                          text: "Visual Memory ",
-                          seassionNum: 6,
-                          press: () {},
-                        ),
-                      ],
+                        ],
                     ),
                     const SizedBox(height: 20),
                     const Text(
@@ -166,12 +175,12 @@ class SeassionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraint) {
+      Size size = MediaQuery.of(context).size;
+
       return ClipRRect(
         borderRadius: BorderRadius.circular(13),
         child: Container(
-          width: constraint.maxWidth / 2 -
-              10, // constraint.maxWidth provide us the available with for this widget
-          // padding: EdgeInsets.all(16),
+          width: size.width * 0.4,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(13),
@@ -194,14 +203,14 @@ class SeassionCard extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       height: 32,
-                      width: 33,
+                      width: 25,
                       decoration: BoxDecoration(
                         color: isDone ? kBlueColor : Colors.white,
                         shape: BoxShape.circle,
                         border: Border.all(color: kBlueColor),
                       ),
                       child: Icon(
-                        size: 20,
+                        size: 17,
                         Icons.play_arrow,
                         color: isDone ? Colors.white : kBlueColor,
                       ),
@@ -211,7 +220,7 @@ class SeassionCard extends StatelessWidget {
                       softWrap: true,
                       textAlign: TextAlign.start,
                       text,
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(color: Colors.black, fontSize: 13),
                     )
                   ],
                 ),
@@ -223,117 +232,3 @@ class SeassionCard extends StatelessWidget {
     });
   }
 }
-
-// class AllExercises extends StatelessWidget {
-//   const AllExercises({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     Size size = MediaQuery.of(context).size;
-
-//     return Scaffold(
-//       appBar: AppBar(
-//         backgroundColor: kBackgroundColor,
-//         elevation: 1,
-//         title: const Text('User Screen'),
-//       ),
-//       body: Container(
-//         height: size.height,
-//         width: size.width,
-//         decoration: const BoxDecoration(
-//           color: kBackgroundColor,
-//         ),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             const Text(
-//               'Welcome User',
-//               style: TextStyle(
-//                 color: Colors.white,
-//                 fontWeight: FontWeight.bold,
-//                 fontSize: 20,
-//               ),
-//             ),
-//             const SizedBox(height: 20),
-//             const Text(
-//               'Activity 1',
-//               style: TextStyle(
-//                 color: Colors.white,
-//                 fontSize: 18,
-//               ),
-//             ),
-//             const SizedBox(height: 10),
-//             ElevatedButton(
-//               onPressed: () {
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => VisualMemory()),
-//                 );
-//               },
-//               style: ButtonStyle(
-//                 backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-//                 foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-//               ),
-//               child: const Text('Visual Memory'),
-//             ),
-//             const SizedBox(height: 20),
-//             const Text(
-//               'Activity 2',
-//               style: TextStyle(
-//                 color: Colors.white,
-//                 fontSize: 18,
-//               ),
-//             ),
-//             const SizedBox(height: 10),
-//             ElevatedButton(
-//               onPressed: () {
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => WordFormation()),
-//                 );
-//               },
-//               style: ButtonStyle(
-//                 backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-//                 foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-//               ),
-//               child: const Text('Word Formation'),
-//             ),
-//             const SizedBox(height: 20),
-//             const Text(
-//               'Activity 3',
-//               style: TextStyle(
-//                 color: Colors.white,
-//                 fontSize: 18,
-//               ),
-//             ),
-//             const SizedBox(height: 10),
-//             ElevatedButton(
-//               onPressed: () {
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => const MatchingGame()),
-//                 );
-//               },
-//               style: ButtonStyle(
-//                 backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-//                 foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-//               ),
-//               child: const Text('Matching Game'),
-//             ),
-//             const SizedBox(height: 50),
-//             ElevatedButton(
-//               onPressed: () {
-//                 // Handle sign out button press
-//               },
-//               style: ButtonStyle(
-//                 backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-//                 foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-//               ),
-//               child: const Text('Sign Out'),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }

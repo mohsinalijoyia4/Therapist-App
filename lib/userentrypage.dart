@@ -34,7 +34,7 @@ class UserEntryPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage('assets/images/userentry.jpg'),
+                            image: AssetImage('assets/images/user.png'),
                           ),
                         ),
                       ),
@@ -167,7 +167,7 @@ class _AnimatedButtonContainerState extends State<AnimatedButtonContainer> {
                       position = 0.0;
                     });
                   },
-                  textColor: signUpTextColor,
+                  textColor: Colors.white,
                 ),
               ),
             ],
